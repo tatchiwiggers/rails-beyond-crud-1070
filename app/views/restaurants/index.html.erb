@@ -5,10 +5,13 @@
 
   <div id="restaurants">
     <% @restaurants.each do |restaurant| %>
-      <%= render restaurant %>
-      <p>
-        <%= link_to "Show this restaurant", restaurant, class: 'btn btn-primary' %>
-      </p>
+        <h6>
+          <%= link_to restaurant.name, restaurant_path(restaurant)%> 
+          <%= '⭐' * restaurant.rating %>
+        </h6>
+        <p>
+          <%= restaurant.address%>
+        </p>
     <% end %>
   </div>
 
